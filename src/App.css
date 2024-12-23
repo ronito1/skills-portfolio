@@ -1,0 +1,48 @@
+/* Main Content Layout */
+.main-content {
+  margin-left: 250px; /* Match sidebar width */
+  padding: 20px;
+  background-color: #ecf0f1; /* Light gray background */
+  min-height: 100vh;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 20px;
+  padding: 20px;
+  background: #ffffff; /* White section background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  color: #34495e; /* Dark text for headers */
+  margin-bottom: 15px;
+}
+
+/* Header */
+.header {
+  background-color: #ffffff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Footer */
+.footer {
+  background: #2c3e50;
+  color: #ecf0f1;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}

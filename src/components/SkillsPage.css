@@ -1,0 +1,241 @@
+.skills-page {
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  /* Header Section */
+  .header {
+    display: flex;
+    justify-content: space-between; /* Space out filters and button */
+    align-items: center; /* Align items vertically */
+    margin-bottom: 20px;
+  }
+  
+  /* Filters Section */
+  .filters {
+    display: flex;
+    gap: 15px; /* Add spacing between dropdowns */
+  }
+  
+  .custom-dropdown {
+    appearance: none; /* Remove default dropdown styling */
+    background-color: #f0f8ff;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .custom-dropdown:hover {
+    border-color: #007bff;
+  }
+  
+  .custom-dropdown:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Add Skill Button */
+  .add-skill-btn {
+    padding: 8px 12px;
+    background-color: rgb(221, 239, 246);
+    color: black;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .add-skill-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .add-skill-btn:active {
+    transform: scale(0.98);
+  }
+  
+  /* Skills Table */
+  .skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .skills-table th,
+  .skills-table td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .skills-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .skills-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .skills-table tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.2s ease;
+  }
+  /* Action Buttons */
+.skills-table td.actions {
+    display: flex;
+    justify-content: flex-start; /* Align buttons to the left */
+    padding: 10px 5px; /* Adjust padding for alignment */
+  }
+  
+  button.edit-btn {
+    color: #007bff;
+    border: 2px solid #007bff;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button.edit-btn:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  button.delete-btn {
+    color: #dc3545;
+    border: 2px solid #dc3545;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px; /* Add space between Edit and Delete buttons */
+  }
+  
+  button.delete-btn:hover {
+    background-color: #dc3545;
+    color: white;
+  } 
+  
+  
+  /* Modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .modal-content form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-content input,
+  .modal-content textarea,
+  .modal-content select {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .modal-content input:focus,
+  .modal-content textarea:focus,
+  .modal-content select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .modal-content button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .modal-content button:first-child {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .modal-content button:first-child:hover {
+    background-color: #218838;
+  }
+  
+  .modal-content button:last-child {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .modal-content button:last-child:hover {
+    background-color: #c82333;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .filters {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 15px;
+    }
+  
+    .skills-table th,
+    .skills-table td {
+      padding: 8px;
+    }
+  
+    .modal-content {
+      width: 90%;
+    }
+  }
+  

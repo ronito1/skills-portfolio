@@ -1,0 +1,84 @@
+.about-page {
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .intro-section {
+    margin-bottom: 40px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    animation: fadeIn 1.8s ease-in;
+  }
+  
+  .explore-section {
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in;
+  }
+  
+  .explore-text {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  
+  .animated-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .icon-item {
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .icon-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .icon-item span {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #007bff;
+    transition: color 0.3s ease;
+  }
+  
+  .icon-item:hover span {
+    color: #0056b3;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

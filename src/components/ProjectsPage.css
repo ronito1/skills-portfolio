@@ -1,0 +1,266 @@
+.projects-page {
+  padding: 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between; /* Align dropdowns and button */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Filters Section */
+.filters {
+  display: flex;
+  gap: 15px; /* Space between dropdowns */
+}
+
+.custom-dropdown {
+  appearance: none; /* Remove default dropdown styling */
+  background-color: #4f88ba;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-dropdown:hover {
+  border-color: #007bff;
+}
+
+.custom-dropdown:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+  /* Add project Button */
+  .add-project-btn {
+    background-color: #add8e6; /* Light Blue */
+    padding: 8px 12px;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .add-project-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .add-project-btn:active {
+    transform: scale(0.98);
+  }
+
+/* Projects Table */
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.projects-table th,
+.projects-table td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.projects-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  color: #333;
+}
+
+.projects-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.projects-table tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.2s ease;
+}
+
+/* Action Buttons */
+.projects-table td.actions {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+button {
+  padding: 8px 15px;
+  border: 2px solid transparent;
+  background-color: transparent;
+  color: black;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Edit Button */
+button.edit-btn {
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+button.edit-btn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Delete Button */
+button.delete-btn {
+  color: #dc3545;
+  border: 2px solid #dc3545;
+}
+
+button.delete-btn:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus,
+.modal-content select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.modal-content button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.modal-content button:first-child {
+  background-color: #28a745;
+  color: white;
+}
+
+.modal-content button:first-child:hover {
+  background-color: #218838;
+}
+
+.modal-content button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+
+.modal-content button:last-child:hover {
+  background-color: #c82333;
+}
+
+/* Status Indicator */
+.status-indicator {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.status-indicator.completed {
+  background-color: #28a745; /* Green */
+}
+
+.status-indicator.incomplete {
+  background-color: #dc3545; /* Red */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  .projects-table th,
+  .projects-table td {
+    padding: 8px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
