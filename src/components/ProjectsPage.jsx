@@ -5,7 +5,7 @@ import "./ProjectsPage.css";
 const ProjectsPage = () => {
   const [projects, setProjects] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
-  const [filters, setFilters] = useState({ status: "", date: "" });
+  const [filters, setFilters] = useState({ status: "", date: "", search: "" });
   const [form, setForm] = useState({
     name: "",
     description: "",
@@ -45,6 +45,15 @@ const ProjectsPage = () => {
         if (filters.date === "2023-2024") return year >= 2023 && year <= 2024;
         return true;
       });
+    }
+    if (filters.search) {
+      filtered = filtered.filter(
+        (project) =>
+          project.name.toLowerCase().includes(filters.search.toLowerCase()) ||
+          project.description
+            .toLowerCase()
+            .includes(filters.search.toLowerCase())
+      );
     }
     setFilteredProjects(filtered);
   }, [filters, projects]);
@@ -109,6 +118,19 @@ const ProjectsPage = () => {
 
   return (
     <div className="projects-page">
+      {/* Search Bar */}
+      <div className="search-bar">
+        <input
+          type="text"
+          name="search"
+          placeholder="Search projects..."
+          value={filters.search}
+          onChange={handleFilterChange}
+          className="search-input"
+        />
+      </div>
+
+      {/* Filters and Add Button */}
       <div className="header">
         <div className="filters">
           <div className="custom-select-container">
@@ -143,6 +165,8 @@ const ProjectsPage = () => {
           + Add New Project
         </button>
       </div>
+
+      {/* Projects Table */}
       <table className="projects-table">
         <thead>
           <tr>
@@ -191,6 +215,7 @@ const ProjectsPage = () => {
           ))}
         </tbody>
       </table>
+
       {isModalOpen && (
         <div className="modal">
           <div className="modal-content">

@@ -5,7 +5,7 @@ import "./SkillsPage.css";
 const SkillsPage = () => {
   const [skills, setSkills] = useState([]);
   const [filteredSkills, setFilteredSkills] = useState([]);
-  const [filters, setFilters] = useState({ category: "", level: "" });
+  const [filters, setFilters] = useState({ category: "", level: "", search: "" });
   const [form, setForm] = useState({
     name: "",
     description: "",
@@ -32,13 +32,13 @@ const SkillsPage = () => {
     fetchSkills();
   }, []);
 
-  // Handle Filter Change
+  // Handle Filter and Search Changes
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Apply Filters
+  // Apply Filters and Search
   useEffect(() => {
     let filtered = skills;
     if (filters.category) {
@@ -46,6 +46,11 @@ const SkillsPage = () => {
     }
     if (filters.level) {
       filtered = filtered.filter((skill) => skill.level === filters.level);
+    }
+    if (filters.search) {
+      filtered = filtered.filter((skill) =>
+        skill.name.toLowerCase().includes(filters.search.toLowerCase())
+      );
     }
     setFilteredSkills(filtered);
   }, [filters, skills]);
@@ -97,6 +102,21 @@ const SkillsPage = () => {
 
   return (
     <div className="skills-page">
+      {/* 
+      
+      Bar */}
+      <div className="search-bar">
+        <input
+          type="text"
+          name="search"
+          placeholder="Search skills..."
+          value={filters.search}
+          onChange={handleFilterChange}
+          className="search-input"
+        />
+      </div>
+
+      {/* Filters and Add Button */}
       <div className="header">
         <div className="filters">
           <select
@@ -130,6 +150,8 @@ const SkillsPage = () => {
           + Add New Skill
         </button>
       </div>
+
+      {/* Skills Table */}
       <table className="skills-table">
         <thead>
           <tr>
@@ -172,6 +194,7 @@ const SkillsPage = () => {
           ))}
         </tbody>
       </table>
+
       {isModalOpen && (
         <div className="modal">
           <div className="modal-content">
