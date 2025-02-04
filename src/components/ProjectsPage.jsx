@@ -181,14 +181,21 @@ const ProjectsPage = () => {
         <tbody>
           {filteredProjects.map((project) => (
             <tr key={project.id}>
-              <td>{project.name}</td>
+              <td>
+                <a 
+                  href={project.website} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="project-link"
+                >
+                  {project.name}
+                </a>
+              </td>
               <td>{project.description}</td>
               <td>{project.techUsed}</td>
               <td>
-                <span
-                  className={`status-indicator ${
-                    project.status === "Completed" ? "completed" : "incomplete"
-                  }`}
+                <span 
+                  className={`status-indicator ${project.status === "Completed" ? "completed" : "incomplete"}`}
                 ></span>
               </td>
               <td>{project.completionDate}</td>
