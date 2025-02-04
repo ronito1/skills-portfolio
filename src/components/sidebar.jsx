@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./sidebar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   faUser,
   faBriefcase,
@@ -20,6 +21,7 @@ const Sidebar = () => {
     { path: "/education", icon: faGraduationCap, label: "Education" },
     { path: "/projects", icon: faProjectDiagram, label: "Projects" },
     { path: "/skills", icon: faTools, label: "Skills" },
+    { path: "/links", icon: faTools, label: "Links" },
   ];
 
   return (
