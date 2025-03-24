@@ -15,7 +15,7 @@ function App() {
     <Router>
       <div className="app">
         <Sidebar />
-        <Header />
+        <Header className="red-text"/>
         <div className="content">
           <Routes>
             <Route path="/" element={<Navigate to="/about" />} />
