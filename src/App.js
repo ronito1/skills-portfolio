@@ -8,26 +8,12 @@ import Education from "./components/EducationPage";
 import ProjectsPage from "./components/ProjectsPage";
 import SkillsPage from "./components/SkillsPage";
 import LinksPage from './components/LinksPage';
-import styled from 'styled-components';
-
-
-const StyledApp = styled.div`
-  background-color: #141414;
-  color: #ffffff;
-`;
-
-
-
-// Use this for text that should be red
-const RedText = styled.span`
-  color: #e50914;
-`;
 
 
 function App() {
   return (
     <Router>
-     <StyledApp>
+      <div className="app">
         <Sidebar />
         <Header />
         <div className="content">
@@ -42,7 +28,7 @@ function App() {
             
             </Routes>
         </div>
-        </StyledApp>
+      </div>
     </Router>
   );
 }
